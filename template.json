@@ -12,7 +12,7 @@
         "guest_additions_mode": "disable",
         "guest_os_type": "Linux26_64",
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "512"]
+            ["modifyvm", "{{.Name}}", "--memory", "1024"]
         ]
     }, {
         "name": "parallels",
@@ -27,7 +27,7 @@
         "guest_os_type": "linux",
         "guest_os_distribution": "linux-2.6",
         "prlctl": [
-            ["set", "{{.Name}}", "--memsize", "512"]
+            ["set", "{{.Name}}", "--memsize", "1024"]
         ]
     }],
 
@@ -48,6 +48,8 @@
         "type": "shell",
         "inline": [
             "sudo cp /tmp/boot2docker/oem-release /var/lib/boot2docker/",
+
+            "sudo cp /tmp/boot2docker/profile /var/lib/boot2docker/",
 
             "sudo cp /tmp/boot2docker/bootsync.sh /var/lib/boot2docker/",
             "sudo chmod +x /var/lib/boot2docker/bootsync.sh",
