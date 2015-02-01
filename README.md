@@ -1,22 +1,20 @@
 # boot2docker Vagrant Box
 
 This repository contains the scripts necessary to create a Vagrant-compatible
-[boot2docker](https://github.com/boot2docker/boot2docker) box. If you work solely
-with Docker, this box lets you keep your Vagrant workflow and work in the
-most minimal Docker environment possible.
+[boot2docker](https://github.com/boot2docker/boot2docker) box with several Docker images pre-installed:
+- busybox
+- progrium/consul
+- progrium/registrator
+- golang
 
 ## Usage
 
-If you just want to use the box, then download the latest box from
-the [releases page](https://github.com/YungSang/boot2docker-vagrant-box/releases)
-and `vagrant up` as usual! Or, if you don't want to leave your terminal:
-
-    $ vagrant init yungsang/boot2docker
+    $ vagrant init yatskevich/service-discovery
     $ vagrant up
     $ export DOCKER_HOST=tcp://localhost:2375
     $ docker version
 
-![Vagrant Up Boot2Docker](https://raw.github.com/YungSang/boot2docker-vagrant-box/master/readme_image.gif)
+![Vagrant Up Boot2Docker](https://raw.github.com/yatskevich/service-discovery-box/classic/readme_image.gif)
 
 ## Building the Box
 
