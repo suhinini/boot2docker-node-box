@@ -3,7 +3,7 @@
         "name": "virtualbox",
         "type": "virtualbox-iso",
         "iso_url": "boot2docker.iso",
-        "iso_checksum": "92e9d0fa63463f9411a08860f7ea68e1",
+        "iso_checksum": "d018f0beb973d6dbdf37c16b0f2468bb",
         "iso_checksum_type": "md5",
         "boot_wait": "5s",
         "ssh_username": "docker",
@@ -23,21 +23,6 @@
             ["modifyvm", "{{.Name}}", "--nictype6", "virtio"],
             ["modifyvm", "{{.Name}}", "--nictype7", "virtio"],
             ["modifyvm", "{{.Name}}", "--nictype8", "virtio"]
-        ]
-    }, {
-        "name": "parallels",
-        "type": "parallels-iso",
-        "iso_url": "boot2docker.iso",
-        "iso_checksum": "92e9d0fa63463f9411a08860f7ea68e1",
-        "iso_checksum_type": "md5",
-        "boot_wait": "15s",
-        "ssh_username": "docker",
-        "ssh_password": "tcuser",
-        "shutdown_command": "sudo poweroff",
-        "guest_os_type": "linux",
-        "guest_os_distribution": "linux-2.6",
-        "prlctl": [
-            ["set", "{{.Name}}", "--memsize", "512"]
         ]
     }],
 
@@ -75,7 +60,13 @@
             "sudo cp /tmp/boot2docker/docker-enter /var/lib/boot2docker/bin/",
             "sudo chmod +x /var/lib/boot2docker/bin/docker-enter"
         ]
-    }],
+    }, {
+        "type": "shell",
+        "inline": [
+            "sudo chmod +x /tmp/boot2docker/pull-images.sh",
+            "sudo /tmp/boot2docker/pull-images.sh"
+        ]
+    }], 
 
     "post-processors": [{
         "type": "vagrant",

@@ -29,18 +29,4 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-  config.vm.provider :parallels do |p|
-    p.check_guest_tools = false
-    p.functional_psf = false
-    p.customize "pre-boot", [
-      "set", :id,
-      "--device-set", "cdrom0",
-      "--image", File.expand_path("../boot2docker.iso", __FILE__),
-      "--enable", "--connect"
-    ]
-    p.customize "pre-boot", [
-      "set", :id,
-      "--device-bootorder", "cdrom0 hdd0"
-    ]
-  end
 end
