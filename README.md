@@ -12,7 +12,7 @@ This repository contains the scripts necessary to create a Vagrant-compatible
     $ export DOCKER_HOST=tcp://localhost:2375
     $ docker version
 
-![Vagrant Up Boot2Docker](https://raw.github.com/suhinini/service-discovery-box/classic/readme_image.gif)
+![Vagrant Up Boot2Docker](https://raw.github.com/suhinini/boot2docker-node-box/classic/readme_image.gif)
 
 ## Building the Box
 
