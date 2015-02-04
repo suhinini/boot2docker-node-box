@@ -3,18 +3,16 @@
 This repository contains the scripts necessary to create a Vagrant-compatible
 [boot2docker](https://github.com/boot2docker/boot2docker) box with several Docker images pre-installed:
 - busybox
-- progrium/consul
-- progrium/registrator
 - golang
 
 ## Usage
 
-    $ vagrant init yatskevich/service-discovery
+    $ vagrant init suhinini/boot2docker-node
     $ vagrant up
     $ export DOCKER_HOST=tcp://localhost:2375
     $ docker version
 
-![Vagrant Up Boot2Docker](https://raw.github.com/yatskevich/service-discovery-box/classic/readme_image.gif)
+![Vagrant Up Boot2Docker](https://raw.github.com/suhinini/service-discovery-box/classic/readme_image.gif)
 
 ## Building the Box
 
